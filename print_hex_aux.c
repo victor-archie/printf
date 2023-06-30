@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_hex_aux - outputs hexgecimal number.
+ * print_hex_aux - outputs hexadecimal number.
  * @num: condition.
  * Return: counter.
  */
