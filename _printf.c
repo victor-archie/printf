@@ -39,7 +39,7 @@ Here:
 		}
 		_putchar(format[a]);
 		len++;
-		i++;
+		a++;
 	}
 	va_end(args);
 	return (len);

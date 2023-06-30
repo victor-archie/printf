@@ -33,7 +33,7 @@ int print_int(va_list args)
 		number = i;
 		while (exp > 0)
 		{
-			digit = num / exp;
+			digit = number / exp;
 			_putchar(digit + '0');
 			number = number - (digit * exp);
 			exp = exp / 10;
@@ -66,7 +66,7 @@ int print_dec(va_list args)
 		number = -number;
 		i = -i;
 		last = -last;
-		j++
+		j++;
 	}
 	if (number > 0)
 	{
@@ -82,7 +82,7 @@ int print_dec(va_list args)
 			_putchar(digit + '0');
 			number = number - (digit * exp);
 			exp = exp / 10;
-			j++
+			j++;
 		}
 	}
 	_putchar(last + '0');

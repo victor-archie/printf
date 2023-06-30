@@ -11,7 +11,7 @@ int print_bin(va_list val)
 	int flag = 0;
 	int count = 0;
 	int a, b = 1, c;
-	unsigned int n = va_ar(val, unsigned int);
+	unsigned int n = va_arg(val, unsigned int);
 	unsigned int i;
 
 	for (a = 0; a < 32; a++)
