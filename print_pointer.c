@@ -5,7 +5,7 @@
  * @val: arguments.
  * Return: counter.
  */
-int printf_pointer(va_list val)
+int print_pointer(va_list val)
 {
 	void *p;
 	char *s = "(nil)";
@@ -26,6 +26,6 @@ int printf_pointer(va_list val)
 	q = (unsigned long int)p;
 	_putchar('0');
 	_putchar('x');
-	w = printf_hex_aux(q);
+	w = print_hex_aux(q);
 	return (w + 2);
 }

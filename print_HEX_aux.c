@@ -7,7 +7,7 @@
  */
 int print_HEX_aux(unsigned int num)
 {
-	int p
+	int p;
 	int *array;
 	int counter = 0;
 	unsigned int temp = num;
