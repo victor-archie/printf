@@ -13,7 +13,7 @@ int print_int(va_list args)
 	int len = 1;
 
 	num = num / 10;
-	number = i;
+	number = num;
 
 	if (last < 0)
 	{
@@ -58,7 +58,7 @@ int print_dec(va_list args)
 	int len = 1, exp = 1;
 
 	num = num / 10;
-	number = i;
+	number = num;
 
 	if (last < 0)
 	{
