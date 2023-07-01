@@ -11,6 +11,7 @@ int print_hex_aux(unsigned long int num)
 	long int *array;
 	long int counter = 0;
 	unsigned long int temp = num;
+	char hexDigit;
 
 	while (num / 16 != 0)
 	{
@@ -19,6 +20,10 @@ int print_hex_aux(unsigned long int num)
 	}
 	counter++;
 	array = malloc(counter * sizeof(long int));
+	if (array == NULL)
+	{
+		return (-1);
+	}
 
 	for (p = 0; p < counter; p++)
 	{
@@ -27,9 +32,15 @@ int print_hex_aux(unsigned long int num)
 	}
 	for (p = counter - 1; p >= 0; p--)
 	{
-		if (array[p] > 9)
-			array[p] = array[p] + 39;
-		_putchar(array[p] + '0');
+		if (array[p] < 10)
+		{
+			_putchar(array[p] + '0');
+		}
+		else
+		{
+			hexDigit = (array[p] - 10) + 'a';
+			_putchar(hexDigit);
+		}
 	}
 	free(array);
 	return (counter);

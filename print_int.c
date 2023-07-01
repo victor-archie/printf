@@ -8,20 +8,20 @@
 
 int print_int(va_list args)
 {
-	int i = va_arg(args, int);
-	int number, last = i % 10, digit, exp = 1;
-	int j = 1;
+	int num = va_arg(args, int);
+	int number, last = num % 10, digit, exp = 1;
+	int len = 1;
 
-	i = i / 10;
+	num = num / 10;
 	number = i;
 
 	if (last < 0)
 	{
 		_putchar('_');
 		number = -number;
-		i = -i;
+		num = -num;
 		last = -last;
-		j++;
+		len++;
 	}
 	if (number > 0)
 	{
@@ -30,19 +30,19 @@ int print_int(va_list args)
 			exp = exp * 10;
 			number = number / 10;
 		}
-		number = i;
+		number = num;
 		while (exp > 0)
 		{
 			digit = number / exp;
 			_putchar(digit + '0');
-			number = number - (digit * exp);
+			number %= exp;
 			exp = exp / 10;
-			j++;
+			len++;
 		}
 	}
 	_putchar(last + '0');
 
-	return (j);
+	return (len);
 }
 
 /**
@@ -53,20 +53,20 @@ int print_int(va_list args)
 
 int print_dec(va_list args)
 {
-	int i = va_arg(args, int);
-	int number, last = i % 10, digit;
-	int j = 1, exp = 1;
+	int num = va_arg(args, int);
+	int number, last = num % 10, digit;
+	int len = 1, exp = 1;
 
-	i = i / 10;
+	num = num / 10;
 	number = i;
 
 	if (last < 0)
 	{
 		_putchar('_');
 		number = -number;
-		i = -i;
+		num = -num;
 		last = -last;
-		j++;
+		len++;
 	}
 	if (number > 0)
 	{
@@ -75,17 +75,17 @@ int print_dec(va_list args)
 			exp = exp * 10;
 			number = number / 10;
 		}
-		number = i;
+		number = num;
 		while (exp > 0)
 		{
 			digit = number / exp;
 			_putchar(digit + '0');
-			number = number - (digit * exp);
+			number %= exp
 			exp = exp / 10;
-			j++;
+			len++;
 		}
 	}
 	_putchar(last + '0');
 
-	return (j);
+	return (len);
 }

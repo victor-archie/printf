@@ -12,6 +12,7 @@ int print_HEX(va_list val)
 	int counter = 0;
 	unsigned int num = va_arg(val, unsigned int);
 	unsigned int temp = num;
+	char hexDigit;
 
 	while (num / 16 != 0)
 	{
@@ -28,9 +29,15 @@ int print_HEX(va_list val)
 	}
 	for (p = counter - 1; p >= 0; p--)
 	{
-		if (array[p] > 9)
-			array[p] = array[p] + 7;
-		_putchar(array[p] + '0');
+		if (array[p] < 10)
+		{
+			_putchar(array[p] + '0');
+		}
+		else
+		{
+			hexDigit = (array[p] - 10) + 'A';
+			_putchar(hexDigit);
+		}
 	}
 	free(array);
 	return (counter);
