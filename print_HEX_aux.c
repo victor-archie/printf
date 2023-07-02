@@ -30,7 +30,7 @@ int print_HEX_aux(unsigned int num)
 	{
 		if (array[p] < 10)
 		{
-			_putchar(array[p] +'0');
+			_putchar(array[p] + '0');
 		}
 		else
 		{
