@@ -19,11 +19,12 @@ int _printf(const char *format, ...)
 
 	va_list args;
 	int a = 0, b, len = 0;
+	int precision, flags, size, width
 
 	va_start(args, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
-Here:
+
 	while (format[a] != '\0')
 	{
 		b = 13;
@@ -31,15 +32,23 @@ Here:
 		{
 			if (m[b].id[0] == format[a] && m[b].id[1] == format[a + 1])
 			{
-				len += m[b].f(args);
+				precision = get_precision(format, &a, args);
+				flags = get_flags(format, &a);
+				size = get_size(format, &a);
+				width = get_width(format, &a, args);
+
+				len += m[b].f(args, precision, flags. size. width);
 				a = a + 2;
-				goto Here;
+				break;
 			}
 			b--;
 		}
-		_putchar(format[a]);
-		len++;
-		a++;
+		if (b < 0)
+		{
+			_putchar(format[a]);
+			len++;
+			a++;
+		}
 	}
 	va_end(args);
 	return (len);
