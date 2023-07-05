@@ -7,17 +7,6 @@
 #include <limits.h>
 #include <unistd.h>
 
-/* FLAGS */
-#define F_MINUS 1
-#define F_PLUS 2
-#define F_ZERO 4
-#define F_HASH 8
-#define F_SPACE 16
-
-/* SIZES */
-#define S_LONG 2
-#define S_SHORT 1
-
 /**
  * struct format - handles the conversion specifiers of printf
  * @id: char pointer of the specifier
@@ -28,7 +17,7 @@
 typedef struct format
 {
 	char *id;
-	int (*f)(const char *, va_list, int, int, int, int);
+	int (*f)();
 } convert_match;
 
 int print_pointer(va_list val);

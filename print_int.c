@@ -35,7 +35,7 @@ int print_int(va_list args)
 		{
 			digit = number / exp;
 			_putchar(digit + '0');
-			number = (digit * exp);
+			number = number - (digit * exp);
 			exp = exp / 10;
 			len++;
 		}

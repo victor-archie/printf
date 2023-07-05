@@ -7,6 +7,7 @@
  */
 int print_hex_aux(unsigned long int num)
 {
+
 	long int p;
 	long int *array;
 	long int counter = 0;
